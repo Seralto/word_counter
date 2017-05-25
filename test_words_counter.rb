@@ -13,18 +13,18 @@ class TestWordsCounter < Minitest::Unit::TestCase
   end
 
   def test_one_word_list
-    assert_equal({'cat' => 1}, @subject.count_words(['cat']))
+    assert_equal({ 'cat' => 1 }, @subject.count_words(['cat']))
   end
 
   def test_two_different_words_list
-    assert_equal({'cat' => 1, 'dog' => 1}, @subject.count_words(%w{cat dog}))
+    assert_equal({ 'cat' => 1, 'dog' => 1 }, @subject.count_words(%w[cat dog]))
   end
 
   def test_two_equal_words_list
-    assert_equal({'cat' => 2}, @subject.count_words(%w{cat cat}))
+    assert_equal({ 'cat' => 2 }, @subject.count_words(%w[cat cat]))
   end
 
   def test_many_words_list
-    assert_equal({'cat' => 2, 'dog' => 1}, @subject.count_words(%w{cat dog cat}))
+    assert_equal({ 'cat' => 2, 'dog' => 1 }, @subject.count_words(%w[cat dog cat]))
   end
 end
